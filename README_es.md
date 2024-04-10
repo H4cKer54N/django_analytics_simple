@@ -1,6 +1,6 @@
 # Django Analytics
 
-**Ver documentación en:** [Español](README_es.md) | [English](README.md)
+**Ver documentación en :** [Español](README_es.md) | [English](README.md)
 
 Django Analytics es un paquete de Django diseñado para facilitar el seguimiento y análisis de datos de usuario en aplicaciones web. Proporciona middleware que registra información sobre los usuarios, incluidos detalles como el navegador, el sistema operativo, el dispositivo y la ubicación geográfica. Los datos recopilados se almacenan en una nueva tabla de base de datos, lo que permite realizar análisis detallados para mejorar la experiencia del usuario y tomar decisiones informadas en el desarrollo y mantenimiento de aplicaciones.
 

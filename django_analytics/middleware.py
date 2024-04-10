@@ -39,3 +39,4 @@ class AnalyticsMiddleware(MiddlewareMixin):
             ip_address=ip_address
         )
         return None
+    
