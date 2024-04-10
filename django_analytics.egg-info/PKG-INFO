@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: django_analytics
-Version: 0.1
-License-File: LICENSE
-Requires-Dist: Django>=3.0
-Requires-Dist: maxminddb>=2.0.1
-Requires-Dist: user-agents>=2.2.0

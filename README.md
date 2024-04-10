@@ -1,15 +1,15 @@
-# Django Analytics
+# Django Analytics Simple
 
 **See documentation at :** [Español](README_es.md) | [English](README.md)
 
-Django Analytics is a Django package designed to facilitate tracking and analysis of user data in web applications. It provides middleware that records information about users, including details such as browser, operating system, device, and geographical location. The collected data is stored in a new database table, enabling detailed analytics to improve user experience and make informed decisions in application development and maintenance.
+Django Analytics simple is a Django package designed to facilitate tracking and analysis of user data in web applications. It provides middleware that records information about users, including details such as browser, operating system, device, and geographical location. The collected data is stored in a new database table, enabling detailed analytics to improve user experience and make informed decisions in application development and maintenance.
 
 ## Installation
 
-You can install Django Analytics using pip:
+You can install Django Analytics simple using pip:
 
 ```bash
-pip install django-analytics
+pip install django_analytics_simple
 ```
 
 Then, add 'django_analytics' to your Django project's installed apps in the settings.py file:
@@ -17,7 +17,7 @@ Then, add 'django_analytics' to your Django project's installed apps in the sett
 ```python
 INSTALLED_APPS = [
     ...
-    'django_analytics',
+    'django_analytics_simple',
     ...
 ]
 ```
@@ -27,13 +27,13 @@ Next, include the provided middleware in your project's middleware stack in the 
 ```python
 MIDDLEWARE = [
     ...
-    'django_analytics.middleware.AnalyticsMiddleware',
+    'django_analytics_simple.middleware.AnalyticsMiddleware',
     ...
 ]
 ```
 
 ## Configuration
-Django Analytics requires the GeoLite2-City.mmdb file for IP geolocation, which should already be included in the package, and it will be updated monthly.
+Django Analytics simple requires the GeoLite2-City.mmdb file for IP geolocation, which should already be included in the package, and it will be updated monthly.
 
 Additionally, you can set the ANALYTICS_LANGUAGE variable in your Django project's settings.py file to specify the language for location data retrieval.
 
@@ -47,7 +47,7 @@ Please note that you may need to review the languages supported by MaxMindDB for
 
 ## Dependencies
 
-Django Analytics relies on the following external libraries:
+Django Analytics simple relies on the following external libraries:
 
 [MaxMindDB] https://pypi.org/project/maxminddb/
 [User-agents] https://pypi.org/project/user-agents/
@@ -55,10 +55,10 @@ Ensure that these dependencies are installed before using Django Analytics.
 
 ## Usage
 
-After configuring Django Analytics, run the following commands to apply migrations:
+After configuring Django Analytics simple, run the following commands to apply migrations:
 
 ```bash
-python manage.py makemigrations django_analytics
+python manage.py makemigrations django_analytics_simple
 python manage.py migrate
 ```
 
