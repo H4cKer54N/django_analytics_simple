@@ -9,6 +9,7 @@ class Analytics(models.Model):
     country = models.CharField(max_length=255, null=True, blank=True)
     city = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    referer = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.ip_address

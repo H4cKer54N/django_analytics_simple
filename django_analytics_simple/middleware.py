@@ -19,6 +19,7 @@ class AnalyticsMiddleware(MiddlewareMixin):
         os = user_agent.os.family
         device = user_agent.device.family
         url = request.path
+        referer = request.META.get('HTTP_REFERER', '')
         ip_address = request.META.get('REMOTE_ADDR', '')
         location_info = self.obtener_informacion_de_ip(ip_address)
         if location_info:
@@ -36,7 +37,8 @@ class AnalyticsMiddleware(MiddlewareMixin):
             url=url,
             city=city,
             country=country,
-            ip_address=ip_address
+            ip_address=ip_address,
+            referer=referer
         )
         return None
     

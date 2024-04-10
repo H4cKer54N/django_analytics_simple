@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "django_analytics_simple"
+version = "2024.0.2"
+description = "Django Analytics simple is a package designed to facilitate tracking and analysis of data in Django web applications"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {file = "LICENSE"}
+keywords = ["Django", "Analytics", "Middleware", "Tracking", "Data", "User", "Browser", "Operating System", "Device", "Geographical Location", "Database", "Table", "Analytics", "User Experience", "Informed Decisions", "Application Development", "Maintenance"]
+classifiers = [
+    "Framework :: Django",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+  "user-agents>2.2.0",
+  "maxminddb>2.0.1",
+  "django>3.0",
+]
+requires-python = ">=3.0"
+authors = [
+  {name = "Santiago Nestor Britos", email = "s.britos@hotmail.com"},
+]
+[project.urls]
+Repository = "https://github.com/h4cker54n/django_analytics_simple"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
