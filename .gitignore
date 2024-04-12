@@ -1,6 +1,2 @@
 .venv
 .env
-dist/django_analytics_simple-2024.0.1-py3-none-any.whl
-dist/django_analytics_simple-2024.0.1.tar.gz
-dist/django_analytics_simple-2024.0.2-py3-none-any.whl
-dist/django_analytics_simple-2024.0.2.tar.gz

@@ -20,10 +20,9 @@ class AnalyticsMiddleware(MiddlewareMixin):
         device = user_agent.device.family
         url = request.path
         referer = request.META.get('HTTP_REFERER', '')
-        ip_address = request.META.get('REMOTE_ADDR', '')
+        ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '').split(',')[0]  # Obtener la primera IP en la lista
         location_info = self.obtener_informacion_de_ip(ip_address)
         if location_info:
-            print(location_info)
             lang_code = settings.ANALYTICS_LANGUAGE
             city = location_info.get('city', {}).get('names', {}).get(lang_code, 'en')
             country = location_info.get('country', {}).get('names', {}).get(lang_code, 'en')
