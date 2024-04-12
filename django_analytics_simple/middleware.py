@@ -20,8 +20,15 @@ class AnalyticsMiddleware(MiddlewareMixin):
         device = user_agent.device.family
         url = request.path
         referer = request.META.get('HTTP_REFERER', '')
-        ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '').split(',')[0]  # Obtener la primera IP en la lista
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            # La dirección IP original se encuentra al principio de la lista
+            ip_address = x_forwarded_for.split(',')[0].strip()
+        else:
+            # Si el encabezado X-Forwarded-For no está presente, usar REMOTE_ADDR
+            ip_address = request.META.get('REMOTE_ADDR', '')
         location_info = self.obtener_informacion_de_ip(ip_address)
+        print(ip_address)
         if location_info:
             lang_code = settings.ANALYTICS_LANGUAGE
             city = location_info.get('city', {}).get('names', {}).get(lang_code, 'en')
